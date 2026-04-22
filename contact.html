@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Chesem Chanel</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-logo">Chesem<span class="dot">.</span></div>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">&#9776;</button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="page-main">
+    <div class="page-header">
+      <p class="hero-sub">Let's connect</p>
+      <h1 class="hero-title" style="font-size: clamp(2rem,6vw,3.5rem);">Contact Me</h1>
+    </div>
+
+    <div class="contact-layout">
+      <!-- FORM -->
+      <div class="contact-form-wrap">
+        <form class="contact-form" id="contact-form">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="hello@example.com" required />
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="What's this about?" />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Say something nice 😊" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary full-width">Send Message</button>
+          <p class="form-success" id="form-success">✅ Message sent! I'll get back to you soon.</p>
+        </form>
+      </div>
+
+      <!-- CONTACT INFO -->
+      <div class="contact-info">
+        <div class="info-card">
+          <span class="info-icon">📧</span>
+          <div>
+            <h4>Email</h4>
+            <p>chesem@email.com</p>
+          </div>
+        </div>
+        <div class="info-card">
+          <span class="info-icon">🏫</span>
+          <div>
+            <h4>School</h4>
+            <p>IYF Weekend Academy</p>
+          </div>
+        </div>
+        <div class="info-card">
+          <span class="info-icon">🎮</span>
+          <div>
+            <h4>Hobbies</h4>
+            <p>Gaming &amp; exploring new tech</p>
+          </div>
+        </div>
+        <div class="info-card">
+          <span class="info-icon">🐍</span>
+          <div>
+            <h4>Currently Learning</h4>
+            <p>CSS3, Flexbox &amp; JavaScript</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 Chesem Chanel | Built with ❤️</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
