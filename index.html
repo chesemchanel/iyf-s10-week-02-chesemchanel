@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chesemchanel - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- NAVIGATION (Task 4.1 - Flexbox nav) -->
+    <nav class="navbar">
+        <div class="navbar-logo">Chesemchanel</div>
+        <ul class="navbar-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO SECTION (Daily Challenge - Day 3) -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Hi, I'm Chesemchanel</h1>
+            <p>A passionate web developer building beautiful, responsive websites.</p>
+            <a href="#projects" class="button button-primary">View My Work</a>
+        </div>
+    </section>
+
+    <!-- BUTTONS (Daily Challenge - Day 1) -->
+    <section style="padding: 3rem 2rem; text-align:center;">
+        <h2 style="margin-bottom:1.5rem;">Button Styles</h2>
+        <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+            <button class="button button-primary">Primary</button>
+            <button class="button button-secondary">Secondary</button>
+            <button class="button button-danger">Danger</button>
+            <button class="button button-disabled" disabled>Disabled</button>
+        </div>
+    </section>
+
+    <!-- PROJECTS GRID (Task 4.1 & 4.2) -->
+    <section id="projects" style="padding: 3rem 0;">
+        <h2 style="text-align:center; margin-bottom:2rem;">My Projects</h2>
+        <div class="projects-grid" style="max-width:1200px; margin:0 auto; padding:0 2rem;">
+            <div class="card">
+                <div style="height:200px;background:#bfdbfe;display:flex;align-items:center;justify-content:center;color:#1e40af;font-weight:600;">Project Image</div>
+                <div class="card-body">
+                    <h3 class="card-title">Project One</h3>
+                    <p class="card-description">A responsive landing page built with HTML and CSS.</p>
+                    <div class="card-tags"><span class="tag">HTML</span><span class="tag">CSS</span></div>
+                    <a href="#" class="button button-primary">View Project</a>
+                </div>
+            </div>
+            <div class="card">
+                <div style="height:200px;background:#bbf7d0;display:flex;align-items:center;justify-content:center;color:#166534;font-weight:600;">Project Image</div>
+                <div class="card-body">
+                    <h3 class="card-title">Project Two</h3>
+                    <p class="card-description">A portfolio website with Flexbox and Grid layouts.</p>
+                    <div class="card-tags"><span class="tag">Flexbox</span><span class="tag">Grid</span></div>
+                    <a href="#" class="button button-primary">View Project</a>
+                </div>
+            </div>
+            <div class="card">
+                <div style="height:200px;background:#fde68a;display:flex;align-items:center;justify-content:center;color:#92400e;font-weight:600;">Project Image</div>
+                <div class="card-body">
+                    <h3 class="card-title">Project Three</h3>
+                    <p class="card-description">An interactive JS app with DOM manipulation.</p>
+                    <div class="card-tags"><span class="tag">JavaScript</span><span class="tag">DOM</span></div>
+                    <a href="#" class="button button-primary">View Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PHOTO GALLERY (Task 4.2 - CSS Grid) -->
+    <section style="padding: 3rem 0; background:#f1f5f9;">
+        <h2 style="text-align:center; margin-bottom:2rem;">Photo Gallery</h2>
+        <div class="photo-gallery" style="max-width:1200px; margin:0 auto;">
+            <div style="height:220px;background:#bfdbfe;border-radius:8px;display:flex;align-items:center;justify-content:center;">Image 1</div>
+            <div style="height:220px;background:#bbf7d0;border-radius:8px;display:flex;align-items:center;justify-content:center;">Image 2</div>
+            <div style="height:220px;background:#fde68a;border-radius:8px;display:flex;align-items:center;justify-content:center;">Image 3</div>
+            <div style="height:220px;background:#fecaca;border-radius:8px;display:flex;align-items:center;justify-content:center;">Image 4</div>
+            <div style="height:220px;background:#ddd6fe;border-radius:8px;display:flex;align-items:center;justify-content:center;">Image 5</div>
+            <div style="height:220px;background:#fed7aa;border-radius:8px;display:flex;align-items:center;justify-content:center;">Image 6</div>
+        </div>
+    </section>
+
+    <!-- CONTACT FORM (Daily Challenge - Day 4) -->
+    <section id="contact" style="padding: 3rem 2rem; max-width:600px; margin:0 auto;">
+        <h2 style="margin-bottom:2rem; text-align:center;">Contact Me</h2>
+        <form>
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Your name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="your@email.com" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
+            </div>
+            <button type="submit" class="button button-primary" style="width:100%;">Send Message</button>
+        </form>
+    </section>
+
+    <!-- FOOTER (Task 4.1 & Daily Challenge Day 5) -->
+    <footer class="footer">
+        <div class="footer-grid" style="max-width:1200px; margin:0 auto;">
+            <div class="footer-col">
+                <h4>About</h4>
+                <p>A passionate web developer on a mission to build beautiful digital experiences.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p>chesemchanel@email.com</p>
+                <p>GitHub: @chesemchanel</p>
+            </div>
+        </div>
+        <div class="footer-copyright" style="max-width:1200px; margin:0 auto;">
+            <p>&copy; 2026 Chesemchanel. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

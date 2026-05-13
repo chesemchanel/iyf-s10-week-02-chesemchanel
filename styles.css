@@ -1,0 +1,506 @@
+/* ============================================================
+   TASK 3.1: CSS SETUP & BASIC STYLING
+   ============================================================ */
+
+/* 1. Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 2. Google Fonts import */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;500&display=swap');
+
+/* ============================================================
+   TASK 3.3: TYPOGRAPHY SYSTEM
+   ============================================================ */
+
+:root {
+    /* Font families */
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
+
+    /* Type scale */
+    --font-xs:   0.75rem;   /* 12px */
+    --font-sm:   0.875rem;  /* 14px */
+    --font-base: 1rem;      /* 16px */
+    --font-lg:   1.125rem;  /* 18px */
+    --font-xl:   1.25rem;   /* 20px */
+    --font-2xl:  1.5rem;    /* 24px */
+    --font-3xl:  1.875rem;  /* 30px */
+    --font-4xl:  2.25rem;   /* 36px */
+    --font-5xl:  3rem;      /* 48px */
+
+    /* Color system - Task 3.1 */
+    --color-primary:        #2563eb;
+    --color-primary-light:  #60a5fa;
+    --color-primary-dark:   #1e40af;
+    --color-secondary:      #7c3aed;
+    --color-background:     #f8fafc;
+    --color-text:           #1e293b;
+    --color-muted:          #94a3b8;
+
+    /* Spacing */
+    --space-xs:  0.25rem;
+    --space-sm:  0.5rem;
+    --space-md:  1rem;
+    --space-lg:  1.5rem;
+    --space-xl:  2rem;
+    --space-2xl: 3rem;
+
+    /* Border radius */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 16px;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+    --shadow-lg: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Base typography */
+body {
+    font-family: var(--font-body);
+    font-size: var(--font-base);
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-background);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: var(--space-md);
+}
+
+h1 { font-size: var(--font-5xl); }
+h2 { font-size: var(--font-4xl); }
+h3 { font-size: var(--font-3xl); }
+h4 { font-size: var(--font-2xl); }
+h5 { font-size: var(--font-xl); }
+h6 { font-size: var(--font-lg); }
+
+p {
+    margin-bottom: var(--space-md);
+    color: var(--color-text);
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-primary-dark);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ============================================================
+   TASK 3.2: BOX MODEL PRACTICE
+   ============================================================ */
+
+/* Fixed broken box - using box-sizing: border-box */
+.broken-box {
+    width: 300px;
+    padding: 20px;
+    border: none;
+    box-sizing: border-box; /* Fix: padding included in width */
+}
+
+/* Box model visualization boxes */
+.box-demo {
+    background-color: var(--color-primary-light);
+    padding: 20px;
+    border: 3px solid var(--color-primary);
+    margin: 20px;
+    border-radius: var(--radius-md);
+}
+
+/* Card component - exact spacing */
+.card {
+    background: #fff;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: var(--space-lg);
+}
+
+.card-title {
+    font-size: var(--font-xl);
+    margin-bottom: 15px;
+}
+
+.card-description {
+    color: var(--color-muted);
+    font-size: var(--font-sm);
+    margin-bottom: var(--space-md);
+}
+
+.card-tags {
+    display: flex;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+    margin-bottom: var(--space-md);
+}
+
+.tag {
+    background: var(--color-primary-light);
+    color: var(--color-primary-dark);
+    padding: 2px 10px;
+    border-radius: 999px;
+    font-size: var(--font-xs);
+    font-weight: 600;
+}
+
+/* ============================================================
+   TASK 4.1: FLEXBOX LAYOUT
+   ============================================================ */
+
+/* Navigation bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-md) var(--space-xl);
+    background: #fff;
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar-logo {
+    font-family: var(--font-heading);
+    font-size: var(--font-xl);
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xl);
+    list-style: none;
+}
+
+.navbar-links a {
+    color: var(--color-text);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar-links a:hover {
+    color: var(--color-primary);
+}
+
+/* Card row */
+.card-row {
+    display: flex;
+    gap: var(--space-lg);
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: var(--space-xl);
+}
+
+.card-row .card {
+    flex: 1 1 280px;
+}
+
+/* Footer layout */
+.footer {
+    background: var(--color-text);
+    color: #fff;
+    padding: var(--space-2xl) var(--space-xl) var(--space-md);
+}
+
+.footer-grid {
+    display: flex;
+    gap: var(--space-2xl);
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: var(--space-xl);
+}
+
+.footer-col h4 {
+    color: #fff;
+    margin-bottom: var(--space-md);
+    font-size: var(--font-lg);
+}
+
+.footer-col p,
+.footer-col a {
+    color: var(--color-muted);
+    font-size: var(--font-sm);
+    line-height: 2;
+}
+
+.footer-col a:hover {
+    color: var(--color-primary-light);
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-copyright {
+    text-align: center;
+    color: var(--color-muted);
+    font-size: var(--font-sm);
+    border-top: 1px solid #334155;
+    padding-top: var(--space-md);
+}
+
+/* ============================================================
+   TASK 4.2: CSS GRID LAYOUT
+   ============================================================ */
+
+/* Photo gallery - 3 column grid */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
+    padding: var(--space-xl);
+}
+
+.photo-gallery img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+}
+
+/* Magazine layout */
+.magazine-layout {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header  header"
+        "sidebar main"
+        "footer  footer";
+    gap: var(--space-md);
+    min-height: 100vh;
+}
+
+.mag-header  { grid-area: header;  background: var(--color-primary); color: #fff; padding: var(--space-lg); }
+.mag-sidebar { grid-area: sidebar; background: #e2e8f0; padding: var(--space-lg); }
+.mag-main    { grid-area: main;    padding: var(--space-lg); }
+.mag-footer  { grid-area: footer;  background: var(--color-text); color: #fff; padding: var(--space-lg); text-align: center; }
+
+/* Projects grid - responsive */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+    padding: var(--space-xl);
+}
+
+/* ============================================================
+   TASK 4.4: POLISH & REFINEMENT - Hover, Transitions, Focus
+   ============================================================ */
+
+/* Buttons */
+.button {
+    display: inline-block;
+    padding: 0.6rem 1.4rem;
+    border-radius: var(--radius-md);
+    font-family: var(--font-body);
+    font-size: var(--font-base);
+    font-weight: 600;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+/* Primary button */
+.button-primary {
+    background: var(--color-primary);
+    color: #fff;
+}
+
+.button-primary:hover {
+    background: var(--color-primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    color: #fff;
+}
+
+/* Secondary button */
+.button-secondary {
+    background: transparent;
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.button-secondary:hover {
+    background: var(--color-primary);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Danger button */
+.button-danger {
+    background: #dc2626;
+    color: #fff;
+}
+
+.button-danger:hover {
+    background: #b91c1c;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    color: #fff;
+}
+
+/* Disabled button */
+.button-disabled,
+.button:disabled {
+    background: var(--color-muted);
+    color: #fff;
+    cursor: not-allowed;
+    border-color: transparent;
+}
+
+.button-disabled:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+/* Focus states - Accessibility */
+a:focus,
+button:focus,
+.button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+/* ============================================================
+   TASK 4.3: MOBILE-FIRST RESPONSIVE DESIGN
+   ============================================================ */
+
+/* Mobile first - base styles (default = mobile) */
+.navbar-links { display: none; }
+.photo-gallery { grid-template-columns: 1fr; }
+.projects-grid { grid-template-columns: 1fr; }
+.magazine-layout { grid-template-columns: 1fr; grid-template-areas: "header" "main" "sidebar" "footer"; }
+.footer-grid { flex-direction: column; gap: var(--space-lg); }
+
+/* Tablet */
+@media (min-width: 768px) {
+    .navbar-links { display: flex; }
+    .photo-gallery { grid-template-columns: repeat(2, 1fr); }
+    .projects-grid { grid-template-columns: repeat(2, 1fr); }
+    .magazine-layout { grid-template-columns: 200px 1fr; grid-template-areas: "header header" "sidebar main" "footer footer"; }
+    .footer-grid { flex-direction: row; }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .photo-gallery { grid-template-columns: repeat(3, 1fr); }
+    .projects-grid { grid-template-columns: repeat(3, 1fr); }
+    .magazine-layout { grid-template-columns: 250px 1fr; }
+}
+
+/* Large Desktop */
+@media (min-width: 1280px) {
+    .container { max-width: 1200px; margin: 0 auto; }
+}
+
+/* ============================================================
+   HERO SECTION (Daily Challenge - Day 3)
+   ============================================================ */
+
+.hero {
+    min-height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                url('../images/hero-bg.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    padding: var(--space-xl);
+}
+
+.hero-content h1 {
+    font-size: clamp(var(--font-3xl), 6vw, var(--font-5xl));
+    margin-bottom: var(--space-md);
+}
+
+.hero-content p {
+    font-size: var(--font-xl);
+    color: rgba(255,255,255,0.85);
+    margin-bottom: var(--space-xl);
+}
+
+/* ============================================================
+   FORM STYLING (Daily Challenge - Day 4)
+   ============================================================ */
+
+.form-group {
+    margin-bottom: var(--space-lg);
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: var(--space-xs);
+    color: var(--color-text);
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid #cbd5e1;
+    border-radius: var(--radius-md);
+    font-family: var(--font-body);
+    font-size: var(--font-base);
+    color: var(--color-text);
+    background: #fff;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: var(--color-primary);
+    outline: none;
+}
+
+.form-group input:invalid,
+.form-group textarea:invalid {
+    border-color: #dc2626;
+}
+
+.form-group textarea {
+    min-height: 150px;
+    resize: vertical;
+}
